@@ -14,7 +14,8 @@ import java.util.Properties;
 public class MenuPrincipal extends Application {
 
     private static final String RUTA_PARTIDA = "resources/partida.dat";
-    private static final String RUTA_CONFIG_DEFAULT = "resources/default_config.properties";
+    private static final String CONFIG_DIR = System.getProperty("user.home") + File.separator + ".stardamvalley";
+    private static final String RUTA_CONFIG_DEFAULT = CONFIG_DIR + File.separator + "default_config.properties";
 
     @Override
     public void start(Stage primaryStage) {

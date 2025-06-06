@@ -13,6 +13,13 @@ public class MainLauncher extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        try {
+            launch(args);
+        } catch (Exception e) {
+            e.printStackTrace(); // para consola
+            try (java.io.PrintWriter out = new java.io.PrintWriter("error.log")) {
+                e.printStackTrace(out); // para archivo
+            } catch (Exception ignored) {}
+        }
     }
 }

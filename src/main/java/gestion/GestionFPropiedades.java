@@ -30,6 +30,13 @@ public class GestionFPropiedades implements Serializable {
         propiedades.setProperty("estacionInicial", "PRIMAVERA");
         propiedades.setProperty("diasPorEstacion", "30");
 
+        File file = new File(RUTA_FICHERO_CONF);
+
+        File directorioPadre = file.getParentFile();
+        if (directorioPadre != null && !directorioPadre.exists()) {
+            directorioPadre.mkdirs();
+        }
+
         try (FileOutputStream fos = new FileOutputStream(RUTA_FICHERO_CONF)) {
             propiedades.store(fos, "Configuración por defecto");
         } catch (IOException e) {
@@ -45,6 +52,13 @@ public class GestionFPropiedades implements Serializable {
         propiedades.setProperty("presupuestoInicial", presupuesto);
         propiedades.setProperty("estacionInicial", estacion.toUpperCase());
         propiedades.setProperty("diasPorEstacion", dias);
+
+        File file = new File(RUTA_FICHERO_CONF_PERS);
+
+        File directorioPadre = file.getParentFile();
+        if (directorioPadre != null && !directorioPadre.exists()) {
+            directorioPadre.mkdirs();
+        }
 
         try (FileOutputStream fos = new FileOutputStream(RUTA_FICHERO_CONF_PERS)) {
             propiedades.store(fos, "Configuración personalizada");

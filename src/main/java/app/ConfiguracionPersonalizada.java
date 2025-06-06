@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 import modelo.Granja;
 import modelo.Estacion;
 
+import java.io.File;
+
+import static gestion.GestionFPropiedades.RUTA_FICHERO_CONF;
+import static gestion.GestionFPropiedades.RUTA_FICHERO_CONF_PERS;
+
 public class ConfiguracionPersonalizada {
 
     public static void mostrar(Stage stageAnterior) {
@@ -26,14 +31,20 @@ public class ConfiguracionPersonalizada {
         Button btnIniciar = new Button("Iniciar Partida");
 
         btnIniciar.setOnAction(e -> {
+            File file = new File(RUTA_FICHERO_CONF_PERS);
+
+            File directorioPadre = file.getParentFile();
+            if (directorioPadre != null && !directorioPadre.exists()) {
+                directorioPadre.mkdirs();
+            }
             String estacionStr = comboEstacion.getValue();
             int dias = spinnerDias.getValue();
             int presupuesto = spinnerPresupuesto.getValue();
 
             Estacion estacion = Estacion.valueOf(estacionStr);
+
             Granja granja = new Granja(estacion, presupuesto);
-            granja.getHuerto().inicializarHuerto();
-            GameContext.setGranja(granja);
+
 
             granja.getConf().establecerPropiedad("diasPorEstacion", String.valueOf(dias));
             granja.getConf().establecerPropiedad("presupuestoInicial", String.valueOf(presupuesto));
@@ -42,6 +53,8 @@ public class ConfiguracionPersonalizada {
                     String.valueOf(presupuesto), estacionStr, String.valueOf(dias)
             );
 
+            granja.getHuerto().inicializarHuerto();
+            GameContext.setGranja(granja);
             ventana.close();
             stageAnterior.close();
 
