@@ -3,10 +3,6 @@ package modelo;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * La clase TiendaGanadera permite comprar animales y alimentos,
- * validando que se cumplan los requisitos (dinero suficiente y edificio construido).
- */
 public class TiendaGanadera implements Serializable {
 
     private static TiendaGanadera instancia;

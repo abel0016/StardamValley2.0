@@ -8,7 +8,6 @@ public class Alimento implements Serializable {
     private double precioCompra;
     private int cantidadDisponible;
 
-    // Constructor simple
     public Alimento(String nombre, double precio) {
         this.nombre = nombre;
         this.precioCompra = precio;

@@ -6,11 +6,6 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * La clase modelo.Tienda representa la tienda del juego Stardam Valley,
- * donde se pueden comprar semillas. Gestiona las semillas disponibles
- * según la estación actual y permite cargar las semillas desde un archivo XML.
- */
 public class TiendaSemillas implements Serializable {
 
     private static final int NUM_SEMILLAS_TIENDA = 3;
@@ -18,20 +13,11 @@ public class TiendaSemillas implements Serializable {
     private Map<Estacion, List<Semilla>> semillasPorEstacion;
     private static TiendaSemillas instancia;
 
-    /**
-     * Constructor privado para evitar la creación de múltiples instancias.
-     * Carga las semillas desde el archivo XML.
-     */
     private TiendaSemillas() {
         this.semillasPorEstacion = new HashMap<>();
         cargarSemillasDesdeXML("semillas.xml");
     }
 
-    /**
-     * Devuelve la instancia única de `modelo.Tienda`.
-     *
-     * @return instancia de `modelo.Tienda`
-     */
     public static TiendaSemillas getInstancia() {
         if (instancia == null) {
             instancia = new TiendaSemillas();
@@ -39,12 +25,6 @@ public class TiendaSemillas implements Serializable {
         return instancia;
     }
 
-    /**
-     * Genera una nueva tienda para la estación actual,
-     * seleccionando semillas aleatorias disponibles en esa estación.
-     *
-     * @param estacionActual La estación actual del juego.
-     */
     public void generarNuevaTienda(Estacion estacionActual) {
         Random random = new Random();
         tiendaSemillas.clear();
@@ -60,11 +40,6 @@ public class TiendaSemillas implements Serializable {
         }
     }
 
-    /**
-     * Carga las semillas desde un archivo XML en la ruta especificada.
-     * Las semillas se organizan por las estaciones en las que se pueden cultivar.
-     *
-     */
     private void cargarSemillasDesdeXML(String nombreArchivo) {
         try {
             InputStream is = getClass().getClassLoader().getResourceAsStream("semillas.xml");
@@ -104,13 +79,6 @@ public class TiendaSemillas implements Serializable {
         }
     }
 
-
-    /**
-     * Convierte una cadena de texto en una lista de estaciones.
-     *
-     * @param textoEstaciones La cadena de texto que contiene las estaciones separadas por guiones.
-     * @return Una lista de estaciones.
-     */
     private List<Estacion> obtenerEstaciones(String textoEstaciones) {
         List<Estacion> estaciones = new ArrayList<>();
         for (String estacion : textoEstaciones.split("-")) {
@@ -119,19 +87,10 @@ public class TiendaSemillas implements Serializable {
         return estaciones;
     }
 
-    /**
-     * Obtiene las semillas que están actualmente en la tienda.
-     *
-     * @return Un conjunto de semillas disponibles en la tienda.
-     */
     public HashSet<Semilla> getTiendaSemillas() {
         return tiendaSemillas;
     }
-    /**
-     * Obtiene un mapa que relaciona cada estación con su lista de semillas disponibles.
-     *
-     * @return Un mapa de semillas organizadas por estación.
-     */
+
     public Map<Estacion, List<Semilla>> obtenerSemillasPorEstacion() {
         return semillasPorEstacion;
     }

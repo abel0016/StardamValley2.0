@@ -211,7 +211,7 @@ public class GestionFicheroHuerto implements Serializable {
             long offset = (fila * columnasHuerto + columna) * TAMANIO_REGISTRO;
             raf.seek(offset);
             int id = raf.readInt();
-            if (id != VALOR_DEFECTO_ENTERO) return false; // Ya hay algo
+            if (id != VALOR_DEFECTO_ENTERO) return false;
 
             raf.seek(offset);
             raf.writeInt(semilla.getId());
@@ -236,7 +236,6 @@ public class GestionFicheroHuerto implements Serializable {
                     int id = raf.readInt();
 
                     if (id != VALOR_DEFECTO_ENTERO) {
-                        // Está plantado: leemos el boolean actual
                         boolean yaRegado = raf.readBoolean();
                         if (!yaRegado) {
                             raf.seek(pos + TAMANIO_ID);

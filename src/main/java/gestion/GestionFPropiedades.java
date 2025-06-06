@@ -5,10 +5,6 @@ import java.nio.file.*;
 import java.util.Properties;
 import java.io.Serializable;
 
-/**
- * Clase que gestiona los archivos de configuración para el juego Stardam Valley.
- * Implementa el patrón Singleton para mantener una única instancia global.
- */
 public class GestionFPropiedades implements Serializable {
     private static final String CONFIG_DIR = System.getProperty("user.home") + File.separator + ".stardamvalley";
     public static final String RUTA_FICHERO_CONF = CONFIG_DIR + File.separator + "default_config.properties";

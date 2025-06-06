@@ -8,7 +8,7 @@ public class Oveja extends Animal {
 
     public Oveja(String nombre) {
         super(nombre);
-        this.idAlimento = 2; // Avena
+        this.idAlimento = 2;
         setEstadoEdad(EstadoEdad.CRIA);
     }
 

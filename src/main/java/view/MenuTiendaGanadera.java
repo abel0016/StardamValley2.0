@@ -77,7 +77,6 @@ public class MenuTiendaGanadera extends VBox {
             getChildren().add(fila);
         }
 
-        // Botón para cerrar el menú
         Button btnCerrar = new Button("Cerrar");
         btnCerrar.setOnAction(e -> onClose.run());
         getChildren().add(btnCerrar);

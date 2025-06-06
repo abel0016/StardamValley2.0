@@ -5,11 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * La clase modelo.Almacen representa un almacén donde se guardan los frutos cosechados
- * de diferentes semillas. Utiliza el patrón Singleton para asegurar que solo exista
- * una única instancia del almacén a lo largo de la aplicación.
- */
+
 public class Almacen implements Serializable {
 
     private HashMap<Semilla, Integer> almacen = new HashMap<>();
@@ -18,16 +14,10 @@ public class Almacen implements Serializable {
     private Map<String, Integer> peces = new HashMap<>();
     private static Almacen instancia;
 
-    /**
-     * Constructor privado para evitar la creación de múltiples instancias.
-     */
+
     private Almacen() {}
 
-    /**
-     * Devuelve la instancia única de modelo.Almacen.
-     *
-     * @return instancia de modelo.Almacen
-     */
+
     public static Almacen getInstancia() {
         if (instancia == null) {
             instancia = new Almacen();
@@ -35,11 +25,6 @@ public class Almacen implements Serializable {
         return instancia;
     }
 
-    /**
-     * Muestra el contenido actual del almacén. Si el almacén está vacío,
-     * se imprime un mensaje correspondiente. De lo contrario, se enumeran
-     * los frutos almacenados junto con sus cantidades.
-     */
     public void mostrarAlmacen() {
         if (almacen.isEmpty()) {
             System.out.println("El almacén está vacío");
@@ -50,13 +35,6 @@ public class Almacen implements Serializable {
         }
     }
 
-    /**
-     * Añade una nueva cosecha al almacén. Si la semilla ya existe en el almacén,
-     * se incrementa la cantidad de frutos; de lo contrario, se agrega la semilla
-     * con la cantidad cosechada.
-     *
-     * @param nuevaCosecha , mapa que asocia cada semilla con la cantidad de frutos cosechados.
-     */
     public void añadirCosecha(Map<Semilla, Integer> nuevaCosecha) {
         for (Map.Entry<Semilla, Integer> entrada : nuevaCosecha.entrySet()) {
             Semilla semilla = entrada.getKey();
@@ -65,12 +43,7 @@ public class Almacen implements Serializable {
             System.out.println("Se han añadido " + cantidad + " frutos de " + semilla.getNombre() + " al almacén");
         }
     }
-    /**
-     * Vende todos los frutos almacenados y calcula las ganancias totales.
-     * Se imprime un resumen de las ventas y se vacía el almacén después de la venta.
-     *
-     * @return Ganancias totales obtenidas por la venta de los frutos.
-     */
+
     public int venderFrutos() {
         int gananciasTotales = 0;
         for (Semilla semilla : almacen.keySet()) {

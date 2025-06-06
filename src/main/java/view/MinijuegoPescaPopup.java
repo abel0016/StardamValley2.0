@@ -30,7 +30,7 @@ public class MinijuegoPescaPopup extends StackPane {
 
     private int posicionXInicial;
     private int posicionYInicial;
-    private AnimationTimer watcher; // nuevo
+    private AnimationTimer watcher;
     private Timeline animacion;
     private Consumer<Boolean> resultadoCallback;
 
