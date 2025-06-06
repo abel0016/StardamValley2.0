@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Bundle {
     private String nombre;
-    private String tipo; // "fruto", "pez", "producto"
+    private String tipo;
     private Map<String, Boolean> elementosRequeridos = new HashMap<>();
     private boolean completado = false;
 

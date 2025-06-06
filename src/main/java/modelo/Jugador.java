@@ -1,6 +1,7 @@
 package modelo;
 
 import app.GameContext;
+import gestion.GestionCentroCivico;
 import gestion.GestionPeces;
 
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public class Jugador implements Serializable {
     private Map<Semilla, Integer> frutosRecolectados = new HashMap<>();
     private Map<String, Integer> productosGanaderos = new HashMap<>();
     private Map<Integer, Integer> alimentos = new HashMap<>();
+    private Map<String, Integer> pecesCapturados = new HashMap<>();
 
     private Random random = new Random();
 
@@ -105,18 +107,75 @@ public class Jugador implements Serializable {
         capturado.setTamanioReal(tamañoReal);
 
         registrarPez(capturado);
+        añadirPezAlInventario(capturado);
 
         System.out.println("Has pescado un " + capturado.getNombre() + " de " + tamañoReal + " cm (valor: " + valorReal + ")");
         return capturado;
     }
+
     private Map<String, Integer> pecesPescados = new HashMap<>();
 
     public void registrarPez(Pez pez) {
         pecesPescados.merge(pez.getNombre(), 1, Integer::sum);
     }
 
-    public Map<String, Integer> getPecesPescados() {
-        return pecesPescados;
+    public void añadirPezAlInventario(Pez pez) {
+        String clave = pez.getNombre() + " (" + pez.getTamanioReal() + " cm)";
+        pecesCapturados.put(clave, pecesCapturados.getOrDefault(clave, 0) + 1);
+    }
+
+    public Map<String, Integer> getPecesCapturados() {
+        return pecesCapturados;
+    }
+
+    public void retirarPez(String clave, int cantidad) {
+        int actual = pecesCapturados.getOrDefault(clave, 0);
+        int nuevo = Math.max(0, actual - cantidad);
+        if (nuevo == 0) {
+            pecesCapturados.remove(clave);
+        } else {
+            pecesCapturados.put(clave, nuevo);
+        }
+    }
+    public int venderPeces() {
+        int total = 0;
+        Map<String, Integer> pecesVendidos = new HashMap<>();
+
+        for (Map.Entry<String, Integer> entry : pecesCapturados.entrySet()) {
+            String clave = entry.getKey(); // Ej: "Trucha (48 cm)"
+            int cantidad = entry.getValue();
+
+            // Extraer nombre y tamaño del pez
+            try {
+                String[] partes = clave.split(" \\(");
+                String nombre = partes[0];
+                String tamanioStr = partes[1].replace(" cm)", "").trim();
+                int tamanio = Integer.parseInt(tamanioStr);
+
+                // Obtener pez base
+                Pez base = GestionPeces.getInstancia()
+                        .obtenerPecesPorEstacion(GameContext.getGranja().getEstacion()) // Para buscar en la estación actual
+                        .stream().filter(p -> p.getNombre().equals(nombre)).findFirst().orElse(null);
+
+                if (base != null) {
+                    int rango = base.getTamanioMaximo() - base.getTamanioMinimo() + 1;
+                    int valor = (int) (base.getValorBase() * (0.5 + ((double)(tamanio - base.getTamanioMinimo()) / rango) * 0.5));
+                    int ganancia = valor * cantidad;
+                    total += ganancia;
+
+                    System.out.println("Vendido " + cantidad + "x " + clave + " por " + ganancia + "€");
+                    pecesVendidos.put(clave, cantidad);
+                }
+            } catch (Exception e) {
+                System.err.println("Error al vender el pez: " + clave);
+            }
+        }
+
+        for (String clave : pecesVendidos.keySet()) {
+            pecesCapturados.remove(clave);
+        }
+
+        return total;
     }
 
 

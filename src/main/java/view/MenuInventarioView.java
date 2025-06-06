@@ -78,6 +78,17 @@ public class MenuInventarioView extends VBox {
                     }
                 }
             }
+            Map<String, Integer> peces = jugador.getPecesCapturados();
+            if (!peces.isEmpty()) {
+                getChildren().add(new Label("Peces pescados:"));
+                for (Map.Entry<String, Integer> entrada : peces.entrySet()) {
+                    int cantidad = entrada.getValue();
+                    if (cantidad > 0) {
+                        getChildren().add(new Label(entrada.getKey() + " x" + cantidad));
+                    }
+                }
+            }
+
 
             if (!alimentos.isEmpty()) {
                 getChildren().add(new Label("Alimentos para animales:"));

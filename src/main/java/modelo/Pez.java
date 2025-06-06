@@ -24,7 +24,7 @@ public class Pez {
     }
 
     private int calcularValorSegunTamanio() {
-        // Proporcionalidad lineal del tamaño respecto al valor base
+        // Proporcionalidad del tamaño respecto al valor base
         double proporcion = (double)(tamanioReal - tamanioMinimo) / (tamanioMaximo - tamanioMinimo);
         return valorBase + (int) (valorBase * proporcion * 0.5); // Hasta +50% si es del tamaño máximo
     }

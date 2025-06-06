@@ -106,14 +106,18 @@ public class PlayaView extends Pane {
         int y = GameContext.getGranja().getPlayerY();
 
         String tipoDeAguas = "superficiales";
+        Jugador jugador = GameContext.getGranja().getJugador();
 
-        boolean estaFrenteAAguaProfunda =
-                (x == 9 && y == 10) || (x == 11 && y == 10) ||
-                        (x == 9 && y == 11) || (x == 10 && y == 11) || (x == 11 && y == 11);
+        // Comprobamos si hay aguas profundas justo al lado (arriba, abajo, izquierda, derecha)
+        boolean hayAguaProfundaCerca =
+                esAguaProfunda(x + 1, y) ||
+                        esAguaProfunda(x - 1, y) ||
+                        esAguaProfunda(x, y + 1) ||
+                        esAguaProfunda(x, y - 1);
 
-        if (estaFrenteAAguaProfunda) {
-            if (!GameContext.getGranja().getJugador().tieneCañaLarga()) {
-                GameContext.mostrarNotificacion("Necesitas una caña larga para pescar aquí.");
+        if (hayAguaProfundaCerca) {
+            if (!jugador.tieneCañaLarga()) {
+                GameContext.mostrarNotificacion("Necesitas una caña larga para pescar aquí");
                 return;
             }
             tipoDeAguas = "profundas";
@@ -123,13 +127,11 @@ public class PlayaView extends Pane {
 
         MinijuegoPescaPopup popup = new MinijuegoPescaPopup(exito -> {
             if (exito) {
-                Jugador jugador = GameContext.getGranja().getJugador();
                 Estacion estacionActual = GameContext.getGranja().getEstacion();
                 Pez pez = jugador.pescar(estacionActual, tipoFinal);
 
                 if (pez != null) {
                     GameContext.mostrarNotificacion("¡Pescaste un " + pez.getNombre() + " de " + pez.getTamanioReal() + " cm!");
-                    jugador.registrarPez(pez);
                 } else {
                     GameContext.mostrarNotificacion("No has podido pescar nada.");
                 }
@@ -141,6 +143,8 @@ public class PlayaView extends Pane {
         this.getChildren().add(popup);
         popup.requestFocus();
     }
+
+
 
     private void renderizar() {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -167,6 +171,11 @@ public class PlayaView extends Pane {
 
         jugadorView.renderizar(gc);
     }
+    private boolean esAguaProfunda(int x, int y) {
+        return (x == 9 && y == 10) || (x == 11 && y == 10) ||
+                (x == 9 && y == 11) || (x == 10 && y == 11) || (x == 11 && y == 11);
+    }
+
     private void mostrarInventario() {
         final MenuInventarioView[] menuInv = new MenuInventarioView[1];
         menuInv[0] = new MenuInventarioView(() -> {

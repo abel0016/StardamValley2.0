@@ -15,6 +15,7 @@ public class Almacen implements Serializable {
     private HashMap<Semilla, Integer> almacen = new HashMap<>();
     private final Map<Semilla, Integer> frutosAlmacenados = new HashMap<>();
     private Map<String, Integer> productosGanaderos = new HashMap<>();
+    private Map<String, Integer> peces = new HashMap<>();
     private static Almacen instancia;
 
     /**
@@ -124,6 +125,28 @@ public class Almacen implements Serializable {
             total += ganancia;
         }
         productosGanaderos.clear();
+        return total;
+    }
+    public void agregarPez(String clave, int cantidad) {
+        peces.put(clave, peces.getOrDefault(clave, 0) + cantidad);
+    }
+
+    public int venderPeces() {
+        int total = 0;
+        for (Map.Entry<String, Integer> entry : peces.entrySet()) {
+            String clave = entry.getKey();
+            int cantidad = entry.getValue();
+
+            // Extraer el valor base y tamaño
+            String nombre = clave.split(" \\(")[0];
+            int tamanio = Integer.parseInt(clave.replaceAll(".*\\((\\d+) cm\\).*", "$1"));
+            int valor = (int) Math.round(tamanio * 0.75);
+
+            int ganancia = cantidad * valor;
+            System.out.println("Se han vendido " + cantidad + " de " + clave + " por " + ganancia + "€");
+            total += ganancia;
+        }
+        peces.clear();
         return total;
     }
 

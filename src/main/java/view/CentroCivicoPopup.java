@@ -112,14 +112,23 @@ public class CentroCivicoPopup extends VBox {
                         break;
 
                     case "pez":
-                        if (jugador.getPecesPescados().getOrDefault(clave, 0) > 0) {
-                            jugador.getPecesPescados().put(clave, jugador.getPecesPescados().get(clave) - 1);
-                            if (jugador.getPecesPescados().get(clave) <= 0) {
-                                jugador.getPecesPescados().remove(clave);
+                        for (Map.Entry<String, Integer> entry : jugador.getPecesCapturados().entrySet()) {
+                            String claveCompleta = entry.getKey();
+                            int cantidad = entry.getValue();
+
+                            if (cantidad <= 0) continue;
+
+                            // Extraer solo el nombre del pez
+                            String nombre = claveCompleta.split(" \\(")[0];
+
+                            if (nombre.equalsIgnoreCase(clave)) {
+                                jugador.retirarPez(claveCompleta, 1);
+                                bundle.entregar(clave);
+                                break;
                             }
-                            bundle.entregar(clave);
                         }
                         break;
+
 
                 }
             }

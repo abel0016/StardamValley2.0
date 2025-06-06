@@ -55,6 +55,20 @@ public class MenuAlmacenView {
                 }
             }
         }
+        // Peces capturados
+        Map<String, Integer> peces = jugador.getPecesCapturados();
+        if (!peces.isEmpty()) {
+            layout.getChildren().add(new Label("Peces pescados:"));
+            for (Map.Entry<String, Integer> entry : peces.entrySet()) {
+                String nombre = entry.getKey();
+                int cantidad = entry.getValue();
+                if (cantidad > 0) {
+                    tieneContenido = true;
+                    layout.getChildren().add(crearFilaPez(nombre, cantidad, jugador, almacen, parent));
+                }
+            }
+        }
+
 
         if (!tieneContenido) {
             layout.getChildren().add(new Label("No tienes productos para depositar"));
@@ -99,4 +113,19 @@ public class MenuAlmacenView {
         fila.getChildren().addAll(label, spinner, btn);
         return fila;
     }
+    private static HBox crearFilaPez(String nombre, int cantidad, Jugador jugador, Almacen almacen, Pane parent) {
+        HBox fila = new HBox(10);
+        Label label = new Label(nombre + " (" + cantidad + ")");
+        Spinner<Integer> spinner = new Spinner<>(1, cantidad, 1);
+        Button btn = new Button("Depositar");
+        btn.setOnAction(e -> {
+            int seleccionadas = spinner.getValue();
+            jugador.retirarPez(nombre, seleccionadas);
+            almacen.agregarPez(nombre, seleccionadas);
+            mostrar(parent);
+        });
+        fila.getChildren().addAll(label, spinner, btn);
+        return fila;
+    }
+
 }

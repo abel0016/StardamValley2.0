@@ -38,8 +38,10 @@ public class MenuEscUtils {
             granja.iniciar_nuevo_dia();
             parentPane.getChildren().remove(menuEsc);
             menuEscVisible = false;
-            parentPane.requestFocus();
+
+            mostrarMenuEsc(parentPane, mostrarInventario);
         });
+
 
         Button btnHabilidades = new Button("Ver Habilidades");
         btnHabilidades.setOnAction(e2 -> MenuHabilidadesView.mostrar(parentPane));

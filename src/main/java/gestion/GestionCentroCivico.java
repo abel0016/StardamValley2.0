@@ -21,7 +21,7 @@ public class GestionCentroCivico {
 
     private final Map<Estacion, String> pecesPorEstacion = Map.of(
             Estacion.PRIMAVERA, "Trucha",
-            Estacion.VERANO, "Lubina",
+            Estacion.VERANO, "Pez Globo",
             Estacion.OTONIO, "Salmón",
             Estacion.INVIERNO, "Carpa"
     );
