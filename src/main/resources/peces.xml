@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peces>
+    <!-- PRIMAVERA -->
+    <pez>
+        <id>1</id>
+        <nombre>Trucha</nombre>
+        <descripcion>Pez de agua dulce muy común en los ríos.</descripcion>
+        <tamanioMinimo>25</tamanioMinimo>
+        <tamanioMaximo>55</tamanioMaximo>
+        <estacion>PRIMAVERA</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>2</id>
+        <nombre>Pez Sol</nombre>
+        <descripcion>Pez pequeño y colorido ideal para principiantes.</descripcion>
+        <tamanioMinimo>10</tamanioMinimo>
+        <tamanioMaximo>20</tamanioMaximo>
+        <estacion>PRIMAVERA</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>3</id>
+        <nombre>Carpa</nombre>
+        <descripcion>Pez común en lagos y estanques.</descripcion>
+        <tamanioMinimo>30</tamanioMinimo>
+        <tamanioMaximo>60</tamanioMaximo>
+        <estacion>PRIMAVERA</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>4</id>
+        <nombre>Tilapia</nombre>
+        <descripcion>Pez versátil que se adapta a diversas condiciones.</descripcion>
+        <tamanioMinimo>20</tamanioMinimo>
+        <tamanioMaximo>45</tamanioMaximo>
+        <estacion>PRIMAVERA</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>5</id>
+        <nombre>Esturión</nombre>
+        <descripcion>Pez antiguo y escaso que vive en aguas profundas.</descripcion>
+        <tamanioMinimo>80</tamanioMinimo>
+        <tamanioMaximo>150</tamanioMaximo>
+        <estacion>PRIMAVERA</estacion>
+        <tipoDeAguas>profundas</tipoDeAguas>
+    </pez>
+
+    <!-- VERANO -->
+    <pez>
+        <id>6</id>
+        <nombre>Atún</nombre>
+        <descripcion>Pez de gran tamaño que habita en mar abierto.</descripcion>
+        <tamanioMinimo>50</tamanioMinimo>
+        <tamanioMaximo>100</tamanioMaximo>
+        <estacion>VERANO</estacion>
+        <tipoDeAguas>profundas</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>7</id>
+        <nombre>Sardina</nombre>
+        <descripcion>Pez pequeño que nada en grandes bancos.</descripcion>
+        <tamanioMinimo>10</tamanioMinimo>
+        <tamanioMaximo>25</tamanioMaximo>
+        <estacion>VERANO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>8</id>
+        <nombre>Pez Globo</nombre>
+        <descripcion>Puede inflarse para protegerse de los depredadores.</descripcion>
+        <tamanioMinimo>15</tamanioMinimo>
+        <tamanioMaximo>35</tamanioMaximo>
+        <estacion>VERANO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>9</id>
+        <nombre>Raya</nombre>
+        <descripcion>Pez plano que se desliza por el fondo del agua.</descripcion>
+        <tamanioMinimo>40</tamanioMinimo>
+        <tamanioMaximo>80</tamanioMaximo>
+        <estacion>VERANO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>10</id>
+        <nombre>Pargo</nombre>
+        <descripcion>Pez de arrecife muy codiciado por pescadores.</descripcion>
+        <tamanioMinimo>30</tamanioMinimo>
+        <tamanioMaximo>65</tamanioMaximo>
+        <estacion>VERANO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+
+    <!-- OTOÑO -->
+    <pez>
+        <id>11</id>
+        <nombre>Salmón</nombre>
+        <descripcion>Famoso por nadar río arriba durante el desove.</descripcion>
+        <tamanioMinimo>40</tamanioMinimo>
+        <tamanioMaximo>85</tamanioMaximo>
+        <estacion>OTONIO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>12</id>
+        <nombre>Lucio</nombre>
+        <descripcion>Pez depredador muy rápido.</descripcion>
+        <tamanioMinimo>35</tamanioMinimo>
+        <tamanioMaximo>90</tamanioMaximo>
+        <estacion>OTONIO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>13</id>
+        <nombre>Anguila</nombre>
+        <descripcion>Su cuerpo alargado le permite esconderse entre las rocas.</descripcion>
+        <tamanioMinimo>20</tamanioMinimo>
+        <tamanioMaximo>50</tamanioMaximo>
+        <estacion>OTONIO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>14</id>
+        <nombre>Pez Gato</nombre>
+        <descripcion>Pez de aguas turbias, con bigotes largos y distintivos.</descripcion>
+        <tamanioMinimo>25</tamanioMinimo>
+        <tamanioMaximo>70</tamanioMaximo>
+        <estacion>OTONIO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>15</id>
+        <nombre>Merluza</nombre>
+        <descripcion>Pez blanco habitual en aguas profundas del otoño.</descripcion>
+        <tamanioMinimo>45</tamanioMinimo>
+        <tamanioMaximo>90</tamanioMaximo>
+        <estacion>OTONIO</estacion>
+        <tipoDeAguas>profundas</tipoDeAguas>
+    </pez>
+
+    <!-- INVIERNO -->
+    <pez>
+        <id>16</id>
+        <nombre>Bacalao</nombre>
+        <descripcion>Pez habitual en aguas frías, muy valorado en invierno.</descripcion>
+        <tamanioMinimo>30</tamanioMinimo>
+        <tamanioMaximo>70</tamanioMaximo>
+        <estacion>INVIERNO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>17</id>
+        <nombre>Lenguado</nombre>
+        <descripcion>Pez plano que se camufla en el fondo marino.</descripcion>
+        <tamanioMinimo>25</tamanioMinimo>
+        <tamanioMaximo>50</tamanioMaximo>
+        <estacion>INVIERNO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>18</id>
+        <nombre>Pez Hielo</nombre>
+        <descripcion>Habita en aguas extremadamente frías bajo el hielo.</descripcion>
+        <tamanioMinimo>15</tamanioMinimo>
+        <tamanioMaximo>30</tamanioMaximo>
+        <estacion>INVIERNO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>19</id>
+        <nombre>Caballa</nombre>
+        <descripcion>Rápido y ágil, nada en grupos grandes.</descripcion>
+        <tamanioMinimo>20</tamanioMinimo>
+        <tamanioMaximo>45</tamanioMaximo>
+        <estacion>INVIERNO</estacion>
+        <tipoDeAguas>superficiales</tipoDeAguas>
+    </pez>
+    <pez>
+        <id>20</id>
+        <nombre>Fletán</nombre>
+        <descripcion>Pez grande y plano que vive en aguas profundas heladas.</descripcion>
+        <tamanioMinimo>70</tamanioMinimo>
+        <tamanioMaximo>130</tamanioMaximo>
+        <estacion>INVIERNO</estacion>
+        <tipoDeAguas>profundas</tipoDeAguas>
+    </pez>
+</peces>

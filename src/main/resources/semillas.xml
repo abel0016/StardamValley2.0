@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<semillas>
+	<!-- Semillas de Verano -->
+    <semilla id="1">
+        <nombre>Tomate</nombre>
+        <estacion>Verano</estacion>
+        <diasCrecimiento>11</diasCrecimiento>
+        <precioCompraSemilla>50</precioCompraSemilla>
+        <precioVentaFruto>75</precioVentaFruto>
+        <maxFrutos>6</maxFrutos>
+    </semilla>
+    <semilla id="2">
+        <nombre>Maíz</nombre>
+        <estacion>Verano-Otonio</estacion>
+        <diasCrecimiento>14</diasCrecimiento>
+        <precioCompraSemilla>75</precioCompraSemilla>
+        <precioVentaFruto>100</precioVentaFruto>
+        <maxFrutos>10</maxFrutos>
+    </semilla>
+    <semilla id="3">
+        <nombre>Pimiento</nombre>
+        <estacion>Verano</estacion>
+        <diasCrecimiento>5</diasCrecimiento>
+        <precioCompraSemilla>40</precioCompraSemilla>
+        <precioVentaFruto>60</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+    <semilla id="4">
+        <nombre>Melón</nombre>
+        <estacion>Verano</estacion>
+        <diasCrecimiento>12</diasCrecimiento>
+        <precioCompraSemilla>80</precioCompraSemilla>
+        <precioVentaFruto>120</precioVentaFruto>
+        <maxFrutos>3</maxFrutos>
+    </semilla>
+    <semilla id="5">
+        <nombre>Trigo</nombre>
+        <estacion>Verano</estacion>
+        <diasCrecimiento>4</diasCrecimiento>
+        <precioCompraSemilla>10</precioCompraSemilla>
+        <precioVentaFruto>15</precioVentaFruto>
+        <maxFrutos>7</maxFrutos>
+    </semilla>
+
+    <!-- Semillas de Otoño -->
+    <semilla id="6">
+        <nombre>Calabaza</nombre>
+        <estacion>Otonio</estacion>
+        <diasCrecimiento>13</diasCrecimiento>
+        <precioCompraSemilla>100</precioCompraSemilla>
+        <precioVentaFruto>150</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+    <semilla id="7">
+        <nombre>Uva</nombre>
+        <estacion>Otonio</estacion>
+        <diasCrecimiento>10</diasCrecimiento>
+        <precioCompraSemilla>60</precioCompraSemilla>
+        <precioVentaFruto>90</precioVentaFruto>
+        <maxFrutos>5</maxFrutos>
+    </semilla>
+    <semilla id="8">
+        <nombre>BlueBean</nombre>
+        <estacion>Otonio</estacion>
+        <diasCrecimiento>28</diasCrecimiento>
+        <precioCompraSemilla>200</precioCompraSemilla>
+        <precioVentaFruto>250</precioVentaFruto>
+        <maxFrutos>2</maxFrutos>
+    </semilla>
+    <semilla id="9">
+        <nombre>Nabo</nombre>
+        <estacion>Otonio</estacion>
+        <diasCrecimiento>6</diasCrecimiento>
+        <precioCompraSemilla>30</precioCompraSemilla>
+        <precioVentaFruto>50</precioVentaFruto>
+        <maxFrutos>3</maxFrutos>
+    </semilla>
+    <semilla id="10">
+        <nombre>Col</nombre>
+        <estacion>Otonio</estacion>
+        <diasCrecimiento>9</diasCrecimiento>
+        <precioCompraSemilla>40</precioCompraSemilla>
+        <precioVentaFruto>70</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+
+    <!-- Semillas de Primavera -->
+    <semilla id="11">
+        <nombre>Fresa</nombre>
+        <estacion>Primavera</estacion>
+        <diasCrecimiento>8</diasCrecimiento>
+        <precioCompraSemilla>120</precioCompraSemilla>
+        <precioVentaFruto>180</precioVentaFruto>
+        <maxFrutos>6</maxFrutos>
+    </semilla>
+    <semilla id="12">
+        <nombre>Zanahoria</nombre>
+        <estacion>Primavera</estacion>
+        <diasCrecimiento>7</diasCrecimiento>
+        <precioCompraSemilla>50</precioCompraSemilla>
+        <precioVentaFruto>75</precioVentaFruto>
+        <maxFrutos>5</maxFrutos>
+    </semilla>
+    <semilla id="13">
+        <nombre>Patata</nombre>
+        <estacion>Primavera</estacion>
+        <diasCrecimiento>6</diasCrecimiento>
+        <precioCompraSemilla>40</precioCompraSemilla>
+        <precioVentaFruto>60</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+    <semilla id="14">
+        <nombre>Coliflor</nombre>
+        <estacion>Primavera</estacion>
+        <diasCrecimiento>12</diasCrecimiento>
+        <precioCompraSemilla>80</precioCompraSemilla>
+        <precioVentaFruto>120</precioVentaFruto>
+        <maxFrutos>2</maxFrutos>
+    </semilla>
+    <semilla id="15">
+        <nombre>Ajo</nombre>
+        <estacion>Primavera</estacion>
+        <diasCrecimiento>4</diasCrecimiento>
+        <precioCompraSemilla>20</precioCompraSemilla>
+        <precioVentaFruto>30</precioVentaFruto>
+        <maxFrutos>3</maxFrutos>
+    </semilla>
+
+    <!-- Semillas de Invierno -->
+    <semilla id="16">
+        <nombre>Col rizada</nombre>
+        <estacion>Invierno</estacion>
+        <diasCrecimiento>6</diasCrecimiento>
+        <precioCompraSemilla>30</precioCompraSemilla>
+        <precioVentaFruto>50</precioVentaFruto>
+        <maxFrutos>3</maxFrutos>
+    </semilla>
+    <semilla id="17">
+        <nombre>Flor de invierno</nombre>
+        <estacion>Invierno</estacion>
+        <diasCrecimiento>9</diasCrecimiento>
+        <precioCompraSemilla>70</precioCompraSemilla>
+        <precioVentaFruto>100</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+    <semilla id="18">
+        <nombre>Fruta de hielo</nombre>
+        <estacion>Invierno</estacion>
+        <diasCrecimiento>10</diasCrecimiento>
+        <precioCompraSemilla>60</precioCompraSemilla>
+        <precioVentaFruto>90</precioVentaFruto>
+        <maxFrutos>5</maxFrutos>
+    </semilla>
+    <semilla id="19">
+        <nombre>Seta mágica</nombre>
+        <estacion>Invierno</estacion>
+        <diasCrecimiento>14</diasCrecimiento>
+        <precioCompraSemilla>120</precioCompraSemilla>
+        <precioVentaFruto>160</precioVentaFruto>
+        <maxFrutos>1</maxFrutos>
+    </semilla>
+    <semilla id="20">
+        <nombre>Raíz de invierno</nombre>
+        <estacion>Invierno</estacion>
+        <diasCrecimiento>5</diasCrecimiento>
+        <precioCompraSemilla>25</precioCompraSemilla>
+        <precioVentaFruto>40</precioVentaFruto>
+        <maxFrutos>6</maxFrutos>
+    </semilla>
+
+    <!-- Semillas de estaciones mixtas -->
+    <semilla id="21">
+        <nombre>Arroz</nombre>
+        <estacion>Primavera-Verano</estacion>
+        <diasCrecimiento>8</diasCrecimiento>
+        <precioCompraSemilla>20</precioCompraSemilla>
+        <precioVentaFruto>30</precioVentaFruto>
+        <maxFrutos>8</maxFrutos>
+    </semilla>
+    <semilla id="22">
+        <nombre>Girasol</nombre>
+        <estacion>Verano-Otonio</estacion>
+        <diasCrecimiento>6</diasCrecimiento>
+        <precioCompraSemilla>100</precioCompraSemilla>
+        <precioVentaFruto>130</precioVentaFruto>
+        <maxFrutos>3</maxFrutos>
+    </semilla>
+    <semilla id="23">
+        <nombre>NaboRojo</nombre>
+        <estacion>Verano-Otonio</estacion>
+        <diasCrecimiento>10</diasCrecimiento>
+        <precioCompraSemilla>60</precioCompraSemilla>
+        <precioVentaFruto>90</precioVentaFruto>
+        <maxFrutos>6</maxFrutos>
+    </semilla>
+    <semilla id="24">
+        <nombre>Berenjena</nombre>
+        <estacion>Verano-Otonio</estacion>
+        <diasCrecimiento>7</diasCrecimiento>
+        <precioCompraSemilla>40</precioCompraSemilla>
+        <precioVentaFruto>60</precioVentaFruto>
+        <maxFrutos>5</maxFrutos>
+    </semilla>
+    <semilla id="25">
+        <nombre>Caléndula</nombre>
+        <estacion>Primavera-Verano</estacion>
+        <diasCrecimiento>6</diasCrecimiento>
+        <precioCompraSemilla>30</precioCompraSemilla>
+        <precioVentaFruto>45</precioVentaFruto>
+        <maxFrutos>4</maxFrutos>
+    </semilla>
+</semillas>
